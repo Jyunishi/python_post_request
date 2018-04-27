@@ -1,11 +1,29 @@
-from tkinter import messagebox
-from tkinter import *
+# import sys
+from PyQt5.QtWidgets import QPushButton
+from PyQt5.QtCore import QCoreApplication
 
 
-def refresh(root):
+def main_menu_create(hwnd):
+    """
 
-    btn_settings = Button(root, text='0', width=7, height=1, fg='red', font='arial 10')
-    btn_settings.grid(row=1, column=1)
-    counter = int(root.btn_settings['text']) + 1
-    btn_settings['text'] = str(counter)
-    # messagebox.showinfo('Test', 'Testestestestest')
+    :param hwnd:
+    :return:
+    """
+
+    btn = QPushButton('Button', hwnd)
+    btn.clicked.connect(refresh)
+    btn.setToolTip('This is a <b>QPushButton</b> widget')
+    # btn.resize(btn.sizeHint())
+    btn.move(50, 50)
+
+
+def refresh():
+    """
+
+    :return:
+    """
+    # if hwnd is not None:
+    #     btn = QPushButton('Button', hwnd)
+    #     btn.setToolTip('This is a <b>QPushButton</b> widget 2')
+    #     btn.resize(btn.sizeHint())
+    #     btn.move(150, 150)
