@@ -1,9 +1,6 @@
 # import sys
-from PyQt5.QtWidgets import QPushButton, QWidget, QHBoxLayout, QVBoxLayout
-from PyQt5.QtCore import QCoreApplication
-
-
-
+from PyQt5.QtWidgets import QPushButton, QWidget, QHBoxLayout
+# rom PyQt5.QtCore import QCoreApplication
 
 
 class TMainWindow(QWidget):
@@ -17,17 +14,25 @@ class TMainWindow(QWidget):
 
         :return:
         """
-        ok_button = QPushButton("OK")
+        refresh_button = QPushButton("Refresh")
         cancel_button = QPushButton("Cancel")
+        refresh_button.clicked.connect(self.refresh)
         v_box = QHBoxLayout()
         v_box.addStretch()
-        v_box.addWidget(ok_button)
+        v_box.addWidget(refresh_button)
         v_box.addWidget(cancel_button)
         self.setGeometry(300, 300, 300, 300)
         self.setLayout(v_box)
         self.show()
 
         # vbox.addLayout(okButton, )
+
+    def refresh(self):
+        """
+
+        :return:
+        """
+        pass
 
 
 # def main_menu_create(hwnd):
